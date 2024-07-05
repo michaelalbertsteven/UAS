@@ -18,21 +18,43 @@ if( !isset($_SESSION['username']) ){
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="icon" href="data:,">
     <style>
-      html {font-family: Arial; display: inline-block; text-align: center;}
+      html {
+        font-family: Arial; 
+        display: inline-block; 
+        text-align: center;
+      }
       p {font-size: 1.2rem;}
       h4 {font-size: 0.8rem;}
-      body {margin: 0;}
-      .topnav {overflow: hidden; background-color: #F21616; color: white; font-size: 1.2rem;}
-      .content {padding: 5px; }
-      .card {background-color: white; box-shadow: 0px 0px 10px 1px rgba(230,140,140,.5); border: 1px solid #0c6980; border-radius: 15px;}
-      .card.header {background-color: #F21616; color: white; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; border-top-right-radius: 12px; border-top-left-radius: 12px;}
+      body {
+        margin: 0; 
+      }
+
+      .background-img{
+        background-image: url("background/supercar.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+
+      .topnav {
+        overflow: hidden; 
+        background-color: rgba(0,0,0,0.5); 
+        color: white; 
+        font-size: 1.2rem; 
+        box-shadow: 0px 0px 10px 1px rgba(230,140,140,.5); 
+        border: 1px solid #0c6980;
+      }
+      .content {margin-top: 30px; padding: 5px;}
+      .card {background-color: rgba(0,0,0,0.5); box-shadow: 0px 0px 10px 1px rgba(230,140,140,.5); border: 1px solid #0c6980; border-radius: 15px;}
+      .card.header {background-color: rgba(0,0,0,0.5); color: white; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; border-top-right-radius: 12px; border-top-left-radius: 12px;}
       .cards {max-width: 700px; margin: 0 auto; display: grid; grid-gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));}
       .reading {font-size: 1.3rem;}
       .packet {color: #bebebe;}
       .temperatureColor {color: #fd7e14;}
       .humidityColor {color: #1b78e2;}
-      .statusreadColor {color: #702963; font-size:12px;}
-      .LEDColor {color: #183153;}
+      .statusreadColor {color: #fd7e14; font-size:12px;}
+      .LEDColor {color: #1b78e2;}
       
       /* ----------------------------------- Toggle Switch */
       .switch {
@@ -117,16 +139,35 @@ if( !isset($_SESSION['username']) ){
         text-decoration: none;
         margin-bottom: 1rem;
     }
+    .btn:hover{
+      background-color: rgba(0,0,0,0.5);
+    }
+
+    @media(max-width: 1366px){
+      html{
+        font-size: 100%;
+      }
+    }
+
+    @media(max-width: 768px){
+      html{
+        font-size: 75%;
+      }
+    }
+
+    @media(max-width: 450px){
+      html{
+        font-size: 55%;
+      }
+    }
     </style>
   </head>
   
-  <body>
+  <body class="background-img">
     <div class="topnav">
       <h3>ESP32 WITH MYSQL DATABASE</h3>
     </div>
-    
-    <br>
-    
+
     <!-- __ DISPLAYS MONITORING AND CONTROLLING ____________________________________________________________________________________________ -->
     <div class="content">
       <div class="cards">
@@ -170,11 +211,8 @@ if( !isset($_SESSION['username']) ){
         <!-- ======================================================================================================= -->
         
       </div>
-    </div>
-    
-    <br>
-    
-    <div class="content">
+
+      <div class="content">
       <div class="cards">
         <div class="card header" style="border-radius: 15px;">
             <h3 style="font-size: 0.7rem;">LAST TIME RECEIVED DATA FROM ESP32 [ <span id="ESP32_01_LTRD"></span> ]</h3>
@@ -183,7 +221,10 @@ if( !isset($_SESSION['username']) ){
             <h3 style="font-size: 0.7rem;"></h3> 
         </div>
       </div>
+      </div>
     </div>
+    
+    
     <!-- ___________________________________________________________________________________________________________________________________ -->
     
     <script>

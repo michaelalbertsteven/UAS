@@ -5,17 +5,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Users Edit</title>
 <style>
-    body{margin : 0; }
-    html {font-family: Arial;   display: inline-block;  text-align: center;   }
-    .header{background-color: #F21616;  color: white;   overflow: hidden;   }
-    .content {padding: 5px; }
-    .cards {max-width: 700px; margin-top: 1rem; margin: 0 auto; display: grid; grid-gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));}
-    .card {background-color: white; box-shadow: 0px 0px 10px 1px rgba(230,140,140,.5); border: 1px solid #0c6980; border-radius: 15px;}
-    .card.header {background-color: #F21616; color: white; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; border-top-right-radius: 12px; border-top-left-radius: 12px;}
+    body{
+        margin : 0;
+     }
+    html {
+        font-family: Arial;   
+        display: inline-block;  
+        text-align: center;   
+    }
 
-    form .input-group input {margin-top: 1rem;   width: 50%; height: 10%;    padding: 1rem;  font-size: 1rem;    background: none;   color: #8f8d8d; }
+    .background-img{
+        background-image: url("background/supercar.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+    .header{
+        overflow: hidden; 
+        background-color: rgba(0,0,0,0.5); 
+        color: white; 
+        font-size: 1.2rem; 
+        box-shadow: 0px 0px 10px 1px rgba(230,140,140,.5); 
+        border: 1px solid #0c6980; 
+    }
+    .content {
+        padding: 5px; 
+    }
+    .cards {
+        max-width: 700px; 
+        margin-top: 1rem; 
+        margin: 0 auto; 
+        display: grid; 
+        grid-gap: 2rem; 
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .card {
+        background-color: rgba(0, 0, 0, 0.5); 
+        box-shadow: 0px 0px 10px 1px rgba(230,140,140,.5); 
+        border: 1px solid #0c6980; 
+        border-radius: 15px;
+    }
+    .card.header {
+        background-color: rgba(0, 0, 0, 0.5); 
+        color: white; 
+        border-bottom-right-radius: 0px; 
+        border-bottom-left-radius: 0px; 
+        border-top-right-radius: 12px; 
+        border-top-left-radius: 12px;
+    }
+
+    form .input-group input {
+        margin-top: 1rem;  
+        width: 50%; 
+        height: 10%;    
+        padding: 1rem;  
+        font-size: 1rem;    
+        background: none;   
+        color: #8f8d8d; 
+    }
 
     form .btn {
     margin-top: 0.5rem;
@@ -29,7 +80,6 @@
     }
 
     .btn{
-        border-radius: 5px;
         cursor: pointer;
         color: #8f8d8d;
         font-size: 1rem;
@@ -38,13 +88,24 @@
         text-decoration: none;
     }
 
+    .btn:hover{
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .label{
+        text-align: left;
+        margin-left: 10rem;
+        margin-top: 1rem;
+        color: white;
+    }
+
     @media (max-width:1366px) {
     html {
         font-size: 100%;
     }
 }
 
-@media (max-width:768px) {
+    @media (max-width:768px) {
     html {
         font-size: 75%;
     }
@@ -58,8 +119,7 @@
 
 </style>
 </head>
-
-<body>
+<body class="background-img">
     <div class="header"><h1>WELCOME TO EDIT PAGE</h1></div>
     <?php
     include 'koneksi.php';
@@ -78,23 +138,28 @@
                     
                      
                     <div class="input-group">
+                        <div class="label"><label for="name">Nama</label></div>
                         <input type="hidden" name="id" value="<?php echo $d['id']; ?>">
                         <input type="text" id="name" name="name"  placeholder="Name" value="<?php echo $d['name']; ?>">
                     </div>
 
                     <div class="input-group">
+                        <div class="label"><label for="username">Username</label></div>
                         <input type="text" id="username" name="username"  placeholder="Username" value="<?php echo $d['username']; ?>">
                     </div>
                     
                     <div class="input-group">
+                        <div class="label"><label for="email">Email</label></div>
                         <input type="email" id="InputEmail" name="email"  placeholder="Email" value="<?php echo $d['email']; ?>">
                     </div>
 
                     <div class="input-group">
+                        <div class="label"><label for="password">Password</label></div>
                         <input type="password" placeholder="Password" id="InputPassword" name="password" value="<?php echo $d['repassword']; ?>">
                     </div>
 
                     <div class="input-group">
+                        <div class="label"><label for="repassword">Re - Password</label></div>
                         <input type="password" placeholder="Re - Password" id="InputRePassword" name="repassword" value="<?php echo $d['repassword']; ?>"> 
                     </div>
                     <button type="submit" class="btn" name="submit">Save</button>

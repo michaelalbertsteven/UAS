@@ -1,64 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-<style>
-    body{margin : 0; }
-    html {font-family: Arial;   display: inline-block;  text-align: center;   }
-    .header{background-color: #F21616;  color: white;   overflow: hidden;   }
-    .content {padding: 5px; }
-    .cards {max-width: 700px; margin-top: 1rem; margin: 0 auto; display: grid; grid-gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));}
-    .card {background-color: white; box-shadow: 0px 0px 10px 1px rgba(230,140,140,.5); border: 1px solid #0c6980; border-radius: 15px;}
-    .card.header {background-color: #F21616; color: white; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; border-top-right-radius: 12px; border-top-left-radius: 12px;}
-
-    form .input-group input {margin-top: 1rem;   width: 50%; height: 10%;    padding: 1rem;  font-size: 1rem;    background: none;   color: #8f8d8d; }
-
-    form .btn {
-    margin-top: 0.5rem;
-    display: inline-block;
-    padding: 0.5rem 0.5rem;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 10px;
-    color: #8f8d8d;
-    margin-bottom: 0.5rem;
-    }
-
-    .btn{
-        border-radius: 5px;
-        cursor: pointer;
-        color: #8f8d8d;
-        font-size: 1rem;
-        padding: 0.5rem 0.5rem;
-        border-radius: 10px;
-        text-decoration: none;
-    }
-
-    @media (max-width:1366px) {
-    html {
-        font-size: 100%;
-    }
-}
-
-@media (max-width:768px) {
-    html {
-        font-size: 75%;
-    }
-}
-
-    @media (max-width:450px){
-    html {
-        font-size: 55%;
-    }
-}
-
-</style>
-</head>
-
-<body>
-
 <?php
 //menyertakan file program koneksi.php pada register
 require('koneksi.php');
@@ -99,7 +38,7 @@ if( isset($_POST['submit']) ){
                         // $_SESSION['username'] = $username;
                        
                         // header('Location: register.php');
-                        $validate = 'Register berhasil !!';
+                        $validate = 'Register Berhasil !!';
                     
                     //jika gagal maka akan menampilkan pesan error
                     } 
@@ -108,16 +47,16 @@ if( isset($_POST['submit']) ){
                         }
                 }
                 else{
-                        $error =  'Username sudah terdaftar !!';
+                        $error =  'Username Sudah Terdaftar !!';
                     }
             }
             else{
-                $validate = 'Password tidak sama !!';
+                $validate = 'Password Tidak Sama !!';
                 }
             
         }
         else{
-            $error =  'Data tidak boleh kosong !!';
+            $error =  'Data Tidak Boleh Kosong !!';
             }
     } 
 
@@ -129,8 +68,170 @@ if( isset($_POST['submit']) ){
     }
 ?>
 
-    <div class="header"><h1>WELCOME TO REGISTER PAGE</h1></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users Register</title>
+<style>
+    body{
+        margin : 0; 
+    }
+    html {
+        font-family: Arial;   
+        display: inline-block;  
+        text-align: center;   
+    }
 
+    .background-img{
+        background-image: url("background/supercar.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+    .header{
+        overflow: hidden; 
+        background-color: rgba(0,0,0,0.5); 
+        color: white; 
+        font-size: 1.2rem; 
+        box-shadow: 0px 0px 10px 1px rgba(230,140,140,.5); 
+        border: 1px solid #0c6980; 
+    }
+    .content {
+        padding: 5px; 
+    }
+    .cards {
+        max-width: 700px; 
+        margin-top: 1rem; 
+        margin: 0 auto; 
+        display: grid; 
+        grid-gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .card {
+        background-color: rgba(0, 0, 0, 0.5); 
+        box-shadow: 0px 0px 10px 1px rgba(230,140,140,.5); 
+        border: 1px solid #0c6980; 
+        border-radius: 15px;
+    }
+    .card.header {
+        background-color: rgba(0, 0, 0, 0.5); 
+        color: white; 
+        border-bottom-right-radius: 0px; 
+        border-bottom-left-radius: 0px; 
+        border-top-right-radius: 12px; 
+        border-top-left-radius: 12px;
+    }
+
+    form .input-group input {
+        margin-top: 1rem;   
+        width: 50%; 
+        height: 10%;    
+        padding: 1rem;  
+        font-size: 1rem;    
+        background: none;   
+        color: #8f8d8d; 
+    }
+
+    form .btn {
+    margin-top: 0.5rem;
+    display: inline-block;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 10px;
+    color: #8f8d8d;
+    margin-bottom: 0.5rem;
+    }
+
+    .btn{
+        cursor: pointer;
+        color: #8f8d8d;
+        font-size: 1rem;
+        padding: 0.5rem 0.5rem;
+        border-radius: 10px;
+        text-decoration: none;
+    }
+
+    .btn:hover{
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .pesan{
+        color: #fff;
+        border-radius: 10px;
+        margin-top:5px;
+        margin-left: 10rem;
+        margin-right: 10rem;
+    }
+
+    /* CSS for the pop-up */
+    #popup {
+            display: none; /* Hidden by default */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            color: #8f8d8d;
+
+        }
+        #popup .isi{
+            border: 1px solid #f44336;
+            border-radius: 10px;
+        }
+        /* CSS for the close button */
+        #closeBtn {
+            color: #8f8d8d;
+            background-color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        #closeBtn:hover{
+            background-color: #094c5d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+    @media (max-width:1366px) {
+    html {
+        font-size: 100%;
+    }
+}
+
+@media (max-width:768px) {
+    html {
+        font-size: 75%;
+    }
+}
+
+    @media (max-width:450px){
+    html {
+        font-size: 55%;
+    }
+}
+</style>
+
+<script type="text/javascript">
+        // JavaScript function to show the pop-up message
+        function showPopup() {
+            setTimeout(function() {
+                document.getElementById('popup').style.display = 'block';
+                setTimeout(closePopup,2000);
+            },500);
+            
+        }
+        // JavaScript function to hide the pop-up message
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+</head>
+<body class="background-img">
+    <div class="header"><h1>WELCOME TO REGISTER PAGE</h1></div>
     <div class="content">
         <div class="cards">
             <div class="card">
@@ -140,14 +241,19 @@ if( isset($_POST['submit']) ){
 
                 <form action="register.php" method="POST">
                     
-                     
                     <div class="input-group">
-                    <?php if($error != ''){ ?>
-                        <div><?= $error; ?></div>
+                    <?php if ($error != '') { ?>
+                        <div id="popup" class="pesan">
+                        <script type="text/javascript">showPopup();</script>
+                            <p class="isi"> <?= $error; ?><!-- <button id="closeBtn" onclick="closePopup()">Close</button>--></p> 
+                        </div>
+                    <?php } ?> 
+                    <?php if ($validate != '') { ?>
+                        <div id="popup" class="pesan">
+                        <script type="text/javascript">showPopup();</script>
+                            <p class="isi"> <?= $validate; ?><!-- <button id="closeBtn" onclick="closePopup()">Close</button>--></p> 
+                        </div>
                     <?php } ?>
-                    <?php if($validate != '') {?>
-                            <p><?= $validate; ?></p>
-                    <?php }?>
                         <input type="text" id="name" name="name"  placeholder="Name">
                     </div>
 
@@ -177,7 +283,7 @@ if( isset($_POST['submit']) ){
         <div class="cards">
           <div class="card header" style="border-radius: 15px;">
               <h3 style="font-size: 0.7rem;">Sudah punya akun?</h3>
-              <a href="login.php"><button type="submit" name="submit" class="btn">Login</button></a>
+              <a href="logout.php"><button type="submit" name="submit" class="btn">Login</button></a>
               <h3 style="font-size: 0.7rem;"></h3>
           </div>
         </div>

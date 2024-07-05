@@ -8,8 +8,23 @@
       p {font-size: 1.2rem;}
       h4 {font-size: 0.8rem;}
       body {margin: 0;}
+
+      .background-img{
+        background-image: url("background/supercar.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
       /* ----------------------------------- TOPNAV STYLE */
-      .topnav {overflow: hidden; background-color: #F21616; color: white; font-size: 1rem;}
+      .topnav {
+        overflow: hidden; 
+        background-color: rgba(0, 0, 0, 0.5); 
+        color: white; 
+        font-size: 1.2rem; 
+        box-shadow: 0px 0px 10px 1px rgba(230,140,140,.5); 
+        border: 1px solid #0c6980;
+      }
       /* ----------------------------------- */
       
       /* ----------------------------------- TABLE STYLE */
@@ -17,7 +32,7 @@
         border-collapse: collapse;
         margin-left: auto; 
         margin-right: auto;
-        font-size: 0.7rem;
+        font-size: 0.8rem;
         font-family: sans-serif;
         min-width: 400px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
@@ -27,23 +42,30 @@
       }
 
       .styled-table thead tr {
-        background-color: #F21616;
-        color: #ffffff;
+        background-color: rgba(0, 0, 0, 0.2);
+        color: white;
         text-align: left;
+        box-shadow: 0px 0px 10px 1px rgba(230,140,140,.5);
+        border: 1px solid #0c6980;
       }
 
       .styled-table th {
         padding: 12px 15px;
         text-align: left;
+        border: 1px solid #0c6980;
       }
 
       .styled-table td {
         padding: 12px 15px;
         text-align: left;
+        color: white;
+        border-bottom: 1px solid #0c6980;
+        border-left: 1px solid #0c6980;
+        border-right: 1px solid #0c6980;
       }
 
       .styled-table tbody tr:nth-of-type(even) {
-        background-color: #f3f3f3;
+        background-color: rgba(0, 0, 0, 0.0);
       }
 
       .styled-table tbody tr.active-row {
@@ -56,15 +78,17 @@
         border-left: 1px solid #e3e3e3;
       }
       
-      td:hover {background-color: rgba(12, 105, 128, 0.21);}
+      td:hover {background-color: rgba(12, 105, 128, 0.21); }
       tr:hover {background-color: rgba(12, 105, 128, 0.15);}
       .styled-table tbody tr:nth-of-type(even):hover {background-color: rgba(12, 105, 128, 0.15);}
       /* ----------------------------------- */
-      
+      p {
+        color: white;
+      }
       /* ----------------------------------- BUTTON STYLE */
       .btn-group .button{
-        background-color: #F21616; /* Green */
-        border: 1px solid #e3e3e3;
+        background-color: rgba(0, 0, 0, 0.2);
+        border: 1px solid #0c6980;
         color: white;
         padding: 5px 8px;
         text-align: center;
@@ -72,7 +96,6 @@
         display: inline-block;
         font-size: 14px;
         cursor: pointer;
-        float: center;
       }
 
       .btn-group .button:not(:last-child) {
@@ -98,14 +121,13 @@
 
       .btn-group .button1{
         background-color: #a0a0a0; /*Green */
-        border: 1px solid #e3e3e3;
+        border: 1px solid #0c6980;
         color: white;
         padding: 5px 8px;
         text-align: center;
         text-decoration: none;
         display: inline-block;
         font-size: 14px;
-        float: center;
       }
 
       .btn-group .button1:hover {
@@ -115,14 +137,12 @@
     </style>
   </head>
   
-  <body>
+  <body class="background-img">
     <div class="topnav">
       <h3>ESP32 DATABASE</h3>
     </div>
     
-    <br>
-    
-    <h3 style="color: #F21616">SENSOR DATA TABLE</h3>
+    <h3 style="color: white">SENSOR DATA TABLE</h3>
     
     <table class="styled-table" id= "table_id">
       <thead>
@@ -178,7 +198,7 @@
     <div class="btn-group">
       <button class="button" id="btn_prev" onclick="prevPage()">Prev</button>
       <button class="button" id="btn_next" onclick="nextPage()">Next</button>
-      <div style="display: inline-block; position:relative; border: 0px solid #e3e3e3; float: center; margin-left: 2px;;">
+      <div style="display: inline-block; position:relative; border: 0px solid #e3e3e3; margin-left: 2px;">
         <p style="position:relative; font-size: 14px;"> Table : <span id="page"></span></p>
       </div>
       <select name="number_of_rows" id="number_of_rows">
@@ -190,8 +210,6 @@
       <button class="button" id="btn_apply" onclick="apply_Number_of_Rows()">Apply</button>
       <a href="home.php"><button class="button1">Back</button></a>
     </div>
-
-    <br>
     
     <script>
       //------------------------------------------------------------
