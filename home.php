@@ -5,7 +5,7 @@ session_start();
 //mengecek username pada session
 if( !isset($_SESSION['username']) ){
   $_SESSION['msg'] = 'anda harus login untuk mengakses halaman ini';
-  header('Location: login.php');
+  header('Location: index.php');
 }
 
 ?>

@@ -297,7 +297,7 @@ if( isset($_POST['submit']) ){
                     </div>
 
                     <button type="submit" class="btn" name="submit">Sign - In</button>
-                    <h3 style="font-size: 0.7rem;"><a href="login.php" class="footer">USER</a></h3>
+                    <h3 style="font-size: 0.7rem;"><a href="index.php" class="footer">USER</a></h3>
                 </form>
                             
             </div>

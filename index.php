@@ -270,7 +270,7 @@ if( isset($_POST['submit']) ){
                 <div class="card header">
                 <h3 style="font-size: 1rem;">Sign - In</h3>
                 </div>
-                <form action="login.php" method="POST">
+                <form action="index.php" method="POST">
                     <div class="input-group">
                         <?php if ($error != '') { ?>
                             <div id="popup" class="pesan">
